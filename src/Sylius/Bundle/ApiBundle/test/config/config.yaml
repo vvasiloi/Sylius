@@ -76,6 +76,12 @@ sylius_resource:
             classes:
                 model: Sylius\Bundle\ApiBundle\Application\Entity\FooSyliusResource
 
+sylius_core:
+    resources:
+        shop_billing_data:
+            classes:
+                model: Sylius\Bundle\ApiBundle\Application\Entity\ShopBillingData
+
 services:
     Sylius\Bundle\ApiBundle\Application\CommandHandler\FooHandler:
         tags:
