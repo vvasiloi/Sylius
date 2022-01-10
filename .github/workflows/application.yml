@@ -297,7 +297,7 @@ jobs:
                 run: |
                     bin/console doctrine:migrations:migrate first --no-interaction
                     bin/console doctrine:migrations:migrate latest --no-interaction
-                    bin/console doctrine:schema:validate --skip-mapping -vvv
+                    bin/console doctrine:schema:validate --skip-mapping -vvv || (exit_code=$?; bin/console doctrine:schema:update --dump-sql; exit $exit_code)
 
             -
                 name: Test installer
